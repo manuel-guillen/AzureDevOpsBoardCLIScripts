@@ -1,0 +1,40 @@
+{
+    "universalValues": {
+        "area": "Area\\Path",
+        "iteration": "Org\\SprintNumber",
+        "assignedTo": "myAlias"
+    },
+    "workItems": [
+        {
+            "title": "Parent Deliverable",
+            "type": "Deliverable",
+            "relations": [
+                {
+                    "type": "Related",
+                    "existingId":86754980
+                },
+                {
+                    "type": "Child",
+                    "newItem": {
+                        "title": "Child Task 1",
+                        "type": "Task"
+                    }
+                },
+                {
+                    "type": "Child",
+                    "newItem": {
+                        "title": "Child Task 2",
+                        "type": "Task"
+                    }
+                },
+                {
+                    "type": "Child",
+                    "newItem": {
+                        "title": "Child Task 3",
+                        "type": "Task"
+                    }
+                }
+            ]
+        }
+    ]
+}
