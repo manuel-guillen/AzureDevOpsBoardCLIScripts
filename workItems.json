@@ -6,33 +6,32 @@
     },
     "workItems": [
         {
-            "title": "Parent Deliverable",
-            "type": "Deliverable",
+            "title": "Child Task 1",
+            "type": "Task",
             "relations": [
                 {
-                    "type": "Related",
-                    "existingId":86754980
-                },
+                    "type": "Parent",
+                    "existingId": 86753090
+                }
+            ]
+        },
+        {
+            "title": "Child Task 2",
+            "type": "Task",
+            "relations": [
                 {
-                    "type": "Child",
-                    "newItem": {
-                        "title": "Child Task 1",
-                        "type": "Task"
-                    }
-                },
+                    "type": "Parent",
+                    "existingId": 86753090
+                }
+            ]
+        },
+        {
+            "title": "Child Task 3",
+            "type": "Task",
+            "relations": [
                 {
-                    "type": "Child",
-                    "newItem": {
-                        "title": "Child Task 2",
-                        "type": "Task"
-                    }
-                },
-                {
-                    "type": "Child",
-                    "newItem": {
-                        "title": "Child Task 3",
-                        "type": "Task"
-                    }
+                    "type": "Parent",
+                    "existingId": 86753090
                 }
             ]
         }
