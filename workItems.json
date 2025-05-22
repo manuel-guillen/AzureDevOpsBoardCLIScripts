@@ -1,5 +1,5 @@
 {
-    "universalValues": {
+    "default": {
         "area": "Area\\Path",
         "iteration": "Org\\SprintNumber",
         "assignedTo": "myAlias"

@@ -11,21 +11,21 @@ if (-not (Test-Path $workItemsPath)) {
 # Load work items from JSON
 $workItemsObj = Get-Content $workItemsPath | ConvertFrom-Json
 
-# Extract universal values from JSON
-$universal = $workItemsObj.universalValues
+# Extract default values from JSON
+$default = $workItemsObj.default
 
 function New-WorkItemRecursive {
     param (
         [Parameter(Mandatory = $true)]$item,
         [switch]$Silent
     )
-    # Use universal values if not specified in the item
-    $itemTitle = if ($item.title) { $item.title } elseif ($universal.title) { $universal.title } else { $null }
-    $itemType = if ($item.type) { $item.type } elseif ($universal.type) { $universal.type } else { $null }
-    $itemArea = if ($item.area) { $item.area } elseif ($universal.area) { $universal.area } else { $null }
-    $itemAssignedTo = if ($item.assignedTo) { $item.assignedTo } elseif ($universal.assignedTo) { $universal.assignedTo } else { $null }
-    $itemDescription = if ($item.description) { $item.description } elseif ($universal.description) { $universal.description } else { $null }
-    $itemIteration = if ($item.iteration) { $item.iteration } elseif ($universal.iteration) { $universal.iteration } else { $null }
+    # Use default values if not specified in the item
+    $itemTitle = if ($item.title) { $item.title } elseif ($default.title) { $default.title } else { $null }
+    $itemType = if ($item.type) { $item.type } elseif ($default.type) { $default.type } else { $null }
+    $itemArea = if ($item.area) { $item.area } elseif ($default.area) { $default.area } else { $null }
+    $itemAssignedTo = if ($item.assignedTo) { $item.assignedTo } elseif ($default.assignedTo) { $default.assignedTo } else { $null }
+    $itemDescription = if ($item.description) { $item.description } elseif ($default.description) { $default.description } else { $null }
+    $itemIteration = if ($item.iteration) { $item.iteration } elseif ($default.iteration) { $default.iteration } else { $null }
 
     $azArgs = @("--output", "json")
     if ($itemTitle)      { $azArgs += @("--title", $itemTitle) }
