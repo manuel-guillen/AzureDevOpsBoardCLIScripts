@@ -13,7 +13,7 @@ Useful scripts for automating common tasks in Azure DevOps taskboards and work i
 
 ### 1. `createItems.ps1`
 
-Automates creation of Azure DevOps work items and relations based off a JSON config files, supporting default values (which can be universally applied and replaced without touching main work item template configs) and recursive related-item new item creation.
+Automates creation of Azure DevOps work items and relations based off a JSON config file, supporting default values (which can be universally applied and replaced without touching main work item template configs) and recursive related-item new item creation.
 
 #### Usage
 

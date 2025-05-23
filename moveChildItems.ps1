@@ -10,7 +10,7 @@ $sourceChildIds = $sourceRelations.relations
                   | ForEach-Object { $_.Split("/")[-1] }
 
 foreach ($childId in $sourceChildIds) {
-    # Move each child item to the new parent
+    # Move each child item to the new parent (delete old relation and create the new one)
     az boards work-item relation remove `
         --id SourceWorkItemId `
         --relation-type "Child" `
