@@ -3,7 +3,6 @@ param (
     [Parameter(Mandatory = $true)][int]$DestinationWorkItemId
 )
 
-# Implementation to move child items will go here.
 $sourceRelations = az boards work-item relation show --id $SourceWorkItemId | ConvertFrom-Json
 $sourceChildIds = $sourceRelations.relations 
                   | Where-Object { $_.rel -eq "Child" } 
